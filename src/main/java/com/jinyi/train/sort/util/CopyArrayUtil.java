@@ -1,4 +1,4 @@
-package com.jinyi.train.sort;
+package com.jinyi.train.sort.util;
 
 /**
  * @author liujin

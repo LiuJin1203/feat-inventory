@@ -1,5 +1,8 @@
 package com.jinyi.train.sort;
 
+import com.jinyi.train.sort.util.CopyArrayUtil;
+import com.jinyi.train.sort.util.DataGenerator;
+import com.jinyi.train.sort.util.TimerCalc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +26,7 @@ public class SortTest {
 
         //冒泡排序
         Sort bubbleSort = new BubbleSort();
-        TimerCalc.calcExeTime(bubbleSort,CopyArrayUtil.copy(arr));
+        TimerCalc.calcExeTime(bubbleSort, CopyArrayUtil.copy(arr));
         Sort bubbleSort1 = new BubbleSortOne();
         TimerCalc.calcExeTime(bubbleSort1,CopyArrayUtil.copy(arr));
 

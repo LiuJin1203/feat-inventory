@@ -1,5 +1,6 @@
-package com.jinyi.train.sort;
+package com.jinyi.train.sort.util;
 
+import com.jinyi.train.sort.Sort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
