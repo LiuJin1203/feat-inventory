@@ -15,9 +15,10 @@ import java.util.Set;
  * @since JDK8
  */
 public class DATTest {
+  private static String dicPath = "src/main/resources/data/small.dic";
   public static void main(String[] args) throws IOException
   {
-    BufferedReader reader = new BufferedReader(new FileReader("E:\\workspace\\gitlab-project\\design-pattern\\src\\main\\resources\\data\\small.dic"));
+    BufferedReader reader = new BufferedReader(new FileReader(dicPath));
     String line;
     List<String> words = new ArrayList<String>();
     Set<Character> charset = new HashSet<Character>();
