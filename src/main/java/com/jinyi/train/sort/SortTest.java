@@ -18,7 +18,7 @@ public class SortTest {
 
     public static void main(String[] args) {
         int number = 5000;
-        Comparable<Integer>[] arr = TimerCalc.calcExeTime(DataGenerator.fake, number);
+        Comparable[] arr = TimerCalc.calcExeTime(DataGenerator.fakeInteger, number);
         System.out.println(Arrays.toString(arr));
         System.out.println(arr.length);
         System.out.println("------------------------------------");
