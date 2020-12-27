@@ -15,7 +15,9 @@ public class InsertSort extends AbstractSortBase {
     public InsertSort(int method) {
         this.method = method;
     }
-
+    public static Sort getInstance(int method){
+        return new InsertSort(method);
+    }
     @Override
     public void sort(Comparable[] arr) {
         if(arr==null||arr.length<2){
@@ -28,6 +30,10 @@ public class InsertSort extends AbstractSortBase {
         show(arr);
     }
 
+    /**
+     * doBySelf
+     * @param arr
+     */
     private void method1(Comparable[] arr) {
         int N = arr.length;
         for (int i = 1; i < N; i++) {

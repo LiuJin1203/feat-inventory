@@ -19,6 +19,9 @@ import java.util.Arrays;
  * @since JDK8
  */
 public class SelectSort extends AbstractSortBase {
+    public static Sort getInstance(){
+        return new SelectSort();
+    }
     @Override
     public void sort(Comparable[] arr) {
         if(arr==null||arr.length<2){

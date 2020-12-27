@@ -23,22 +23,16 @@ public class SortTest {
         System.out.println(arr.length);
         System.out.println("------------------------------------");
 
-
         //冒泡排序
-        Sort bubbleSort = new BubbleSort();
-        TimerCalc.calcExeTime(bubbleSort, CopyArrayUtil.copy(arr));
-        Sort bubbleSort1 = new BubbleSortOne();
-        TimerCalc.calcExeTime(bubbleSort1,CopyArrayUtil.copy(arr));
+        TimerCalc.calcExeTime(BubbleSort.getInstance(1),CopyArrayUtil.copy(arr));
+        TimerCalc.calcExeTime(BubbleSort.getInstance(2),CopyArrayUtil.copy(arr));
 
         // 选择排序
-        Sort selectSort = new SelectSort();
-        TimerCalc.calcExeTime(selectSort,CopyArrayUtil.copy(arr));
+        TimerCalc.calcExeTime(SelectSort.getInstance(),CopyArrayUtil.copy(arr));
 
         // 插入排序
-        Sort insertSort = new InsertSort(1);
-        TimerCalc.calcExeTime(insertSort,CopyArrayUtil.copy(arr));
+        TimerCalc.calcExeTime(InsertSort.getInstance(1),CopyArrayUtil.copy(arr));
+        TimerCalc.calcExeTime(InsertSort.getInstance(2),CopyArrayUtil.copy(arr));
 
-        Sort insertSort2 = new InsertSort(2);
-        TimerCalc.calcExeTime(insertSort2,CopyArrayUtil.copy(arr));
     }
 }
