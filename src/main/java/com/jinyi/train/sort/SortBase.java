@@ -32,4 +32,6 @@ public interface SortBase extends Sort{
      */
     boolean isSorted(Comparable[] arr);
 
+    boolean isSorted(Comparable[] a, int lo, int hi);
+
 }
