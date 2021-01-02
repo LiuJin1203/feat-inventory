@@ -7,7 +7,7 @@ package com.jinyi.train.sort.util;
  */
 public class CopyArrayUtil {
    public static Comparable[] copy(Comparable[] arr){
-        if(arr==null||arr.length<2){
+        if(arr==null){
             return new Comparable[1];
         }
         int N = arr.length;
