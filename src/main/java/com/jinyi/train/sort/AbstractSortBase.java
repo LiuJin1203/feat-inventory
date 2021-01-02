@@ -28,6 +28,11 @@ public abstract class AbstractSortBase implements SortBase {
         }
         return true;
     }
+    public boolean isSorted(Comparable[] a, int lo, int hi) {
+        for (int i = lo + 1; i <= hi; i++)
+            if (less(a[i], a[i-1])) return false;
+        return true;
+    }
     public void show(Comparable[] arr){
         System.out.println(Arrays.toString(arr));
     }
