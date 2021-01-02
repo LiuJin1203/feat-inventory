@@ -35,12 +35,16 @@ public class SortTest {
 //        TimerCalc.calcExeTime(SelectSort.getInstance(), CopyArrayUtil.copy(arr));
 
         // 插入排序
-//        TimerCalc.calcExeTime(InsertSort.getInstance(1), CopyArrayUtil.copy(arr));
-//        TimerCalc.calcExeTime(InsertSort.getInstance(2), CopyArrayUtil.copy(arr));
-
+//        TimerCalc.calcExeTime(InsertSort.getInstance(), CopyArrayUtil.copy(arr));
+        // Shell 希尔排序
+        TimerCalc.calcExeTime(ShellSort.getInstance(), CopyArrayUtil.copy(arr));
         // 快速排序
         TimerCalc.calcExeTime(QuickSort.getInstance(), CopyArrayUtil.copy(arr));
-
+        // 3-way 快速排序
+        TimerCalc.calcExeTime(Quick3WaySort.getInstance(), CopyArrayUtil.copy(arr));
+        //归并排序
+        TimerCalc.calcExeTime(MergeSort.getInstance(), CopyArrayUtil.copy(arr));
+//        testQuick();
     }
 
     /**
@@ -48,7 +52,7 @@ public class SortTest {
      */
     private static void testQuick() {
         Comparable[] arr = {46, 38, 63, 10, 4, 63, 40, 33, 29};
-        TimerCalc.calcExeTime(QuickSort.getInstance(), arr);
+        TimerCalc.calcExeTime(ShellSort.getInstance(), arr);
     }
 
     private static Consumer<Comparable[]> consumer = (data) -> {
