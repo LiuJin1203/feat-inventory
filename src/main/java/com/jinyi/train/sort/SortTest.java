@@ -20,7 +20,7 @@ public class SortTest {
     public static void main(String[] args) {
         int number = 300_000;
         Comparable[] arr = TimerCalc.calcExeTime(DataGenerator.fakeInteger, number);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
         System.out.println(arr.length);
         System.out.println(splitLine);
 
@@ -41,9 +41,13 @@ public class SortTest {
         // 快速排序
         TimerCalc.calcExeTime(QuickSort.getInstance(), CopyArrayUtil.copy(arr));
         // 3-way 快速排序
-        TimerCalc.calcExeTime(Quick3WaySort.getInstance(), CopyArrayUtil.copy(arr));
+//        TimerCalc.calcExeTime(Quick3WaySort.getInstance(), CopyArrayUtil.copy(arr));
+        TimerCalc.calcExeTime(QuickBentleyMcIlroy.getInstance(), CopyArrayUtil.copy(arr));
+
         //归并排序
         TimerCalc.calcExeTime(MergeSort.getInstance(), CopyArrayUtil.copy(arr));
+        //堆排序
+        TimerCalc.calcExeTime(HeapSort.getInstance(), CopyArrayUtil.copy(arr));
 //        testQuick();
     }
 

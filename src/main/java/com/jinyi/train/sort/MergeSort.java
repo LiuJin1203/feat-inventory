@@ -15,7 +15,7 @@ package com.jinyi.train.sort;
  */
 public class MergeSort extends AbstractSortBase{
     private final int CUTOFF = 15;
-    public MergeSort() {
+    private MergeSort() {
     }
 
     public static Sort getInstance() {
@@ -40,6 +40,10 @@ public class MergeSort extends AbstractSortBase{
         int mid = lo + (hi - lo) / 2;
         sort(a, aux, lo, mid);
         sort(a, aux, mid + 1, hi);
+//        if (!less(aux[mid+1], aux[mid])) {
+//            System.arraycopy(aux, lo, a, lo, hi - lo + 1);
+//            return;
+//        }
         merge(a, aux, lo, mid, hi);
     }
     // stably merge a[lo .. mid] with a[mid+1 ..hi] using aux[lo .. hi]
@@ -67,7 +71,7 @@ public class MergeSort extends AbstractSortBase{
     private void insertionSort(Comparable[] a, int lo, int hi) {
         for (int i = lo; i <= hi; i++)
             for (int j = i; j > lo && less(a[j], a[j-1]); j--)
-                exchage(a, j, j-1);
+                exchange(a, j, j-1);
     }
 
 }

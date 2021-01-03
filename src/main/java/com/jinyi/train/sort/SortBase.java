@@ -23,7 +23,7 @@ public interface SortBase extends Sort{
      * @param i
      * @param j
      */
-    void exchage(Comparable[] arr, int i, int j);
+    void exchange(Comparable[] arr, int i, int j);
 
     /**
      * 用于判断数组是否是已排序的

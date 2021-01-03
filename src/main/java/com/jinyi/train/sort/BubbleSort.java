@@ -47,7 +47,7 @@ public class BubbleSort extends AbstractSortBase {
         for (int i = 0; i < N-1; i++) {
             for (int j = i+1; j < N; j++) {
                 if(less(arr[j],arr[i])){
-                    exchage(arr,i,j);
+                    exchange(arr,i,j);
                 }
             }
         }
@@ -58,7 +58,7 @@ public class BubbleSort extends AbstractSortBase {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N - 1 - i; j++) {
                 if (less(arr[j + 1], arr[j])) {
-                    exchage(arr, j + 1, j);
+                    exchange(arr, j + 1, j);
                 }
             }
         }

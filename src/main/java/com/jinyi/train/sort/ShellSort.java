@@ -45,7 +45,7 @@ public class ShellSort extends AbstractSortBase {
         for (int gap = N / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < N; i++) {
                 for (int j = i; j >= gap && less(arr[j], arr[j - gap]); j -= gap) {
-                    exchage(arr, j, j - gap);
+                    exchange(arr, j, j - gap);
                 }
             }
         }

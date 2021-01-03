@@ -34,7 +34,7 @@ public class SelectSort extends AbstractSortBase {
             for (int j = i+1; j < N; j++) {
                 if(less(arr[j],arr[min])){min = j;}
             }
-            exchage(arr,i,min);
+            exchange(arr,i,min);
         }
         show(arr);
     }

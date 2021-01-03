@@ -30,6 +30,7 @@ public class InsertSort extends AbstractSortBase {
     public static Sort getInstance() {
         return new InsertSort();
     }
+
     public static Sort getInstance(int method) {
         return new InsertSort(method);
     }
@@ -58,8 +59,8 @@ public class InsertSort extends AbstractSortBase {
         int N = arr.length;
         for (int i = 1; i < N; i++) {
             for (int j = 0; j < i; j++) {
-                if(less(arr[i],arr[j]))
-                exchage(arr, i, j);
+                if (less(arr[i], arr[j]))
+                    exchange(arr, i, j);
 
             }
         }
@@ -67,13 +68,14 @@ public class InsertSort extends AbstractSortBase {
 
     /**
      * book
+     *
      * @param arr
      */
     private void method2(Comparable[] arr) {
         int N = arr.length;
         for (int i = 1; i < N; i++) {
             for (int j = i; j > 0 && less(arr[j], arr[j - 1]); j--) {
-                    exchage(arr, j, j - 1);
+                exchange(arr, j, j - 1);
             }
         }
     }

@@ -8,6 +8,9 @@ package com.jinyi.train.sort;
  * @since JDK8
  */
 public class Quick3WaySort extends AbstractSortBase {
+    private Quick3WaySort() {
+    }
+
     public static Quick3WaySort getInstance() {
         return new Quick3WaySort();
     }
@@ -48,8 +51,8 @@ public class Quick3WaySort extends AbstractSortBase {
 //        Comparable v = median3(arr,lo,hi);
         while (i<=gt){
             int cmp = arr[i].compareTo(v);
-            if(cmp<0)exchage(arr,lt++,i++);
-            else if(cmp>0)exchage(arr,i,gt--);
+            if(cmp<0)exchange(arr,lt++,i++);
+            else if(cmp>0)exchange(arr,i,gt--);
             else i++;
         }
         quickSort3Way(arr,lo,lt-1);
@@ -59,16 +62,16 @@ public class Quick3WaySort extends AbstractSortBase {
     private Comparable median3(Comparable[] arr, int left, int right) {
         int center = (left + right) / 2;
         if (less(arr[center], arr[left])) {
-            exchage(arr, left, center);
+            exchange(arr, left, center);
         }
         if (less(arr[right], arr[left])) {
-            exchage(arr, left, right);
+            exchange(arr, left, right);
         }
         if (less(arr[right], arr[center])) {
-            exchage(arr, right, center);
+            exchange(arr, right, center);
         }
         //将中值放在最左侧位置上
-        exchage(arr, center, left);
+        exchange(arr, center, left);
         return arr[left];
     }
 

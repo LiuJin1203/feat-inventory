@@ -35,7 +35,7 @@ public class QuickSort extends AbstractSortBase {
         //只有两个值
         if (right - left == 1) {
             if (less(arr[right], arr[left])) {
-                exchage(arr, left, right);
+                exchange(arr, left, right);
             }
             return;
         }
@@ -48,12 +48,12 @@ public class QuickSort extends AbstractSortBase {
             while (less(arr[++i], pivot)) ;
             while (less(pivot, arr[--j])) ;
             if (i < j) {
-                exchage(arr, i, j);
+                exchange(arr, i, j);
             } else {
                 break;
             }
         }
-        exchage(arr, i, right - 1);
+        exchange(arr, i, right - 1);
         //3.左侧和右侧分别递归排序
         quickSort(arr, left, i - 1);
         quickSort(arr, i + 1, right);
@@ -72,16 +72,16 @@ public class QuickSort extends AbstractSortBase {
     private Comparable median3(Comparable[] arr, int left, int right) {
         int center = (left + right) / 2;
         if (less(arr[center], arr[left])) {
-            exchage(arr, left, center);
+            exchange(arr, left, center);
         }
         if (less(arr[right], arr[left])) {
-            exchage(arr, left, right);
+            exchange(arr, left, right);
         }
         if (less(arr[right], arr[center])) {
-            exchage(arr, right, center);
+            exchange(arr, right, center);
         }
         //将中值放在right-1位置上
-        exchage(arr, center, right - 1);
+        exchange(arr, center, right - 1);
         return arr[right - 1];
     }
 }
