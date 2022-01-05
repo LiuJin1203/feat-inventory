@@ -6,7 +6,8 @@ package com.jinyi.train.designpattern.creational.singleton;
  * @since JDK8
  */
 public class DualIfSingleton {
-  private static DualIfSingleton instance = null;
+  //增加volatile修饰多线程模式下禁止[分配内存空间]和[初始化对象]重排序
+  private volatile static DualIfSingleton instance = null;
   private DualIfSingleton(){
 
   }
