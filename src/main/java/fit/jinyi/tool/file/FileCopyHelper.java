@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
@@ -201,6 +202,36 @@ public class FileCopyHelper {
             if(!file.isDirectory()){
                 System.out.println("文件名称: ["+file.getName()+"],大小(KB): "+(file.length()/1024+1));
             }
+        });
+    }
+
+    /**
+     * 递归打印文件夹下所有文件
+     * @param path
+     */
+    public void printAllFilesRe(String path){
+        File srcFolder = new File(path);
+        //如果源文件夹路径不存在返回
+        if(!srcFolder.exists()){
+            log.info("源文件路径不存在.");
+            return;
+        }
+        if(!srcFolder.isDirectory()){
+            log.info("源文件路径需要是文件夹.");
+            return;
+        }
+        File[] files = srcFolder.listFiles();
+//        List<Integer> nums = new ArrayList<>();
+//        nums.subList(0,20);
+        Stream.of(files).forEach(file->{
+            //文件
+            if(!file.isDirectory()){
+                System.out.println("文件名称: ["+file.getName()+"],大小(KB): "+(file.length()/1024+1));
+            }else {
+                System.out.println("文件夹名称: ["+file.getName()+"]------------");
+                printAllFilesRe(file.getPath());
+            }
+
         });
     }
 

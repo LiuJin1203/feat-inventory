@@ -14,17 +14,15 @@ import java.io.File;
 public class FileCopyRunTest {
     @Test
     public void copyFile(){
-//        String sourcePath = "D:\\software/Docker Desktop Installer.exe";
-//        String destPath = "E:\\testCopy/Docker Desktop Installer_test.exe";
         String sourcePath = "D:\\software/cn_windows_10_multiple_editions_x64_dvd_6848463.iso";
-        String destPath = "E:\\testCopy/cn_windows_10_multiple_editions_x64_dvd_6848463.iso";
+        String destPath = "E:\\cn_windows_10_multiple_editions_x64_dvd_6848463.iso";
         File srcFile = new File(sourcePath);
         File destFile = new File(destPath);
         FileCopyHelper fileCopyHelper = FileCopyHelper.getInstance();
         long start = System.currentTimeMillis();
 //        fileCopyHelper.bigFileChannelCopy(srcFile,destFile);
-        fileCopyHelper.bigFileNioBufferCopy(srcFile,destFile);
-//        fileCopyHelper.bigFileBufferStreamCopy(srcFile,destFile);
+//        fileCopyHelper.bigFileNioBufferCopy(srcFile,destFile);
+        fileCopyHelper.bigFileBufferStreamCopy(srcFile,destFile);
         long end = System.currentTimeMillis();
         System.out.println("文件复制完成，耗时(ms): "+(end-start));
     }
@@ -34,6 +32,8 @@ public class FileCopyRunTest {
         String sourcePath = "D:\\software";
 //        String sourcePath = "\\Apple iPhone\\Internal Storage\\DCIM\\103APPLE";
         FileCopyHelper.getInstance().printAllFiles(sourcePath);
+        System.out.println("=============================================");
+        FileCopyHelper.getInstance().printAllFilesRe(sourcePath);
     }
 
     @Test
