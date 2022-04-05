@@ -1,0 +1,14 @@
+grpc:
+  clients:
+    - serviceApiClass: fit.jinyi.tool.config.YamlReader
+      port: 22112
+      ip: "127.0.0.1"
+      serviceName: "service_one"
+      grpcServiceClass: fit.jinyi.tool.config.YamlReader
+    - serviceApiClass: fit.jinyi.tool.config.YamlReader
+      port: 22112
+      ip: "127.0.0.1"
+      serviceName: "service_two"
+      grpcServiceClass: fit.jinyi.tool.config.YamlReader
+
+

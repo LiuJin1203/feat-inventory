@@ -50,6 +50,19 @@
             <artifactId>groovy</artifactId>
             <version>3.0.9</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml
+  https://bitbucket.org/asomov/snakeyaml/wiki/Documentation -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
     </dependencies>
 
 
